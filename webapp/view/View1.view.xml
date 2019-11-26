@@ -21,7 +21,6 @@
 									<smartFilterBar:ControlConfiguration key="CodCultura" visibleInAdvancedArea="true"  filterType="single"/>
 									<smartFilterBar:ControlConfiguration key="CodCliente" visibleInAdvancedArea="true"  filterType="single"/>
 									<smartFilterBar:ControlConfiguration key="GroupBy" visibleInAdvancedArea="true"  filterType="single"/>
-								
 								</smartFilterBar:controlConfiguration>
 								<smartFilterBar:layoutData>
 									<FlexItemData shrinkFactor="0"/>
