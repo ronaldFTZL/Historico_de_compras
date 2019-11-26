@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="http://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="http://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="http://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZMM_GW_RELAT_SLOWMOVING_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZMM_CDS_RELAT_SLOWMOVINGType" sap:label="Relatório de Slow Moving" sap:content-version="1">
+				<Key><PropertyRef Name="matnr"/></Key><Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material"
+					sap:quickinfo="Nº do material"/><Property Name="maktx" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:quickinfo="Texto breve de material"/><Property Name="clabs" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Disponível"
+					sap:quickinfo="Estoque de utilização livre avaliado"/><Property Name="cinsm" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Bloqueado" sap:quickinfo="Estoque em controle de qualidade"/><Property Name="cspem" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Qualidade" sap:quickinfo="Estoque bloqueado"/><Property Name="MesAno" Type="Edm.String" MaxLength="7" sap:display-format="UpperCase" sap:label="Mês/Ano"/><Property Name="charg" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lote" sap:quickinfo="Número do lote"/><Property Name="Limite" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Limite Dias"/><Property Name="lbkum" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Estoque total" sap:quickinfo="Estoque avaliado total"/><Property Name="stprs" Type="Edm.Decimal" Precision="12" Scale="3" sap:label="Preço standard"/><Property Name="salk3" Type="Edm.Decimal" Precision="14" Scale="3" sap:label="Valor total" sap:quickinfo="Valor do estoque avaliado total"/><Property Name="custo" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Custo%"/></EntityType>
+			<EntityContainer Name="ZMM_GW_RELAT_SLOWMOVING_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZMM_CDS_RELAT_SLOWMOVING" EntityType="ZMM_GW_RELAT_SLOWMOVING_SRV.ZMM_CDS_RELAT_SLOWMOVINGType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/></EntityContainer>
+			<Annotations Target="ZMM_GW_RELAT_SLOWMOVING_SRV.ZMM_GW_RELAT_SLOWMOVING_SRV_Entities/ZMM_CDS_RELAT_SLOWMOVING"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_DATE</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_DATE</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-p2000490499trial.dispatcher.hanatrial.ondemand.com/destinations/ihara/sap/opu/odata/sap/ZMM_GW_RELAT_SLOWMOVING_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-p2000490499trial.dispatcher.hanatrial.ondemand.com/destinations/ihara/sap/opu/odata/sap/ZMM_GW_RELAT_SLOWMOVING_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

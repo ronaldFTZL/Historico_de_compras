@@ -1,0 +1,61 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="RelatorioSlowMoving.controller.View1"
+	height="100%">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<IconTabBar expandable="true" expanded="true" applyContentPadding="false" showOverflowSelectList="true" upperCase="false" visible="true"
+							selectedKey="Ok" stretchContentHeight="true" backgroundDesign="Transparent">
+							<items>
+								<IconTabSeparator icon="" iconDensityAware="false"/>
+								<IconTabFilter icon="sap-icon://activity-2" iconColor="Neutral" text="Depósito" count="{contador}" design="Vertical" showAll="false"
+									textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+									<content>
+										<smartFilterBar:SmartFilterBar id="smartFilterBar3" entitySet="ZMM_CDS_GPR_SM_2">
+											<smartFilterBar:controlConfiguration>
+												<smartFilterBar:ControlConfiguration key="werks" visibleInAdvancedArea="true"/>												
+												<smartFilterBar:ControlConfiguration key="lgort" visibleInAdvancedArea="true"/>
+												<smartFilterBar:ControlConfiguration key="matnr" visibleInAdvancedArea="true"/>												
+												<smartFilterBar:ControlConfiguration key="sm" visible="false"/>	
+											</smartFilterBar:controlConfiguration>
+										</smartFilterBar:SmartFilterBar>
+										<smartTable:SmartTable entitySet="ZMM_CDS_GPR_SM_2" smartFilterId="smartFilterBar3" tableType="AnalyticalTable" useExportToExcel="true"
+											beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Itens" showRowCount="true"
+											enableAutoBinding="true" class="sapUiResponsiveContentPadding"
+											initiallyVisibleFields="werks,lgort,matnr,maktx,clabs,cinsm,cspem,MesAno,Limite,sm,lbkum2,stprs,salk3,custo">
+											<smartTable:layoutData>
+												<FlexItemData growFactor="1" baseSize="0%"/>
+											</smartTable:layoutData>
+										</smartTable:SmartTable>
+									</content>
+								</IconTabFilter>
+								<IconTabSeparator icon="" iconDensityAware="false"/>
+								<IconTabFilter icon="sap-icon://activity-items" iconColor="Neutral" text="Lote" count="{count_dv}" design="Vertical" showAll="false"
+									textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+									<content>
+										<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ZMM_CDS_GRP_SM_3">
+											<smartFilterBar:controlConfiguration>
+												<smartFilterBar:ControlConfiguration key="charg" visibleInAdvancedArea="true"/>
+												<smartFilterBar:ControlConfiguration key="matnr" visibleInAdvancedArea="true"/>
+												<smartFilterBar:ControlConfiguration key="sm" visible="false"/>						
+											</smartFilterBar:controlConfiguration>
+										</smartFilterBar:SmartFilterBar>
+										<smartTable:SmartTable entitySet="ZMM_CDS_GRP_SM_3" smartFilterId="smartFilterBar" tableType="AnalyticalTable" useExportToExcel="true"
+											beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="Itens" showRowCount="true"
+											enableAutoBinding="true" class="sapUiResponsiveContentPadding"
+											initiallyVisibleFields="werks,lgort,matnr,maktx,charg,clabs,cinsm,cspem,MesAno,Limite,sm,lbkum,stprs,salk3,custo"
+											/>
+									</content>
+								</IconTabFilter>
+							</items>
+							<content/>
+						</IconTabBar>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

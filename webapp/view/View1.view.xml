@@ -1,0 +1,44 @@
+<mvc:View controllerName="zhist_vendas.historico_vendas.controller.View1"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<VBox fitContainer="true">
+							<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="HistoricoComprasSet" search="onFilter" persistencyKey="SmartFilter_Explored"
+								basicSearchFieldName="Ano" enableBasicSearch="true">
+								<smartFilterBar:controlConfiguration>
+									<smartFilterBar:ControlConfiguration key="Ano" visibleInAdvancedArea="true"  mandatory="mandatory" filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="Material"  visibleInAdvancedArea="true" />
+									<smartFilterBar:ControlConfiguration key="Base_C"  visibleInAdvancedArea="treu" filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="Realizado"  visibleInAdvancedArea="true" filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="Pedidos_pendente" visibleInAdvancedArea="true" filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="Reajuste" visibleInAdvancedArea="true" filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="SalesUpdate"  visibleInAdvancedArea="true" filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="Solicitacoes" visibleInAdvancedArea="true"  filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="CodCultura" visibleInAdvancedArea="true"  filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="CodCliente" visibleInAdvancedArea="true"  filterType="single"/>
+									<smartFilterBar:ControlConfiguration key="GroupBy" visibleInAdvancedArea="true"  filterType="single"/>
+								
+								</smartFilterBar:controlConfiguration>
+								<smartFilterBar:layoutData>
+									<FlexItemData shrinkFactor="0"/>
+								</smartFilterBar:layoutData>
+							</smartFilterBar:SmartFilterBar>
+							<smartTable:SmartTable id="LineItemsSmartTable" entitySet="HistoricoComprasSet" smartFilterId="smartFilterBar" tableType="Table"
+								useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items"
+								showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+								<!-- layout data used to make the table growing but the filter bar fixed -->
+								<smartTable:layoutData>
+									<FlexItemData growFactor="1" baseSize="0%"/>
+								</smartTable:layoutData>
+							</smartTable:SmartTable>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

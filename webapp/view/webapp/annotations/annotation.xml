@@ -1,0 +1,17 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZMM_GW_RELAT_SLOWMOVING_SRV/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="ZMM_GW_RELAT_SLOWMOVING_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ZRELATORIO_SLOWMOVING.annotations.annotation.ZMM_GW_RELAT_SLOWMOVING_SRV">
+			<Annotations Target="Metadata.ZMM_CDS_RELAT_SLOWMOVINGType">
+				<Annotation Term="UI.FieldGroup">
+					<Record Type="UI.FieldGroupType"></Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
